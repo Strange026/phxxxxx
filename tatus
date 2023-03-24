@@ -1,0 +1,101 @@
+[33mcommit 1d9c085f60b09e2de8705e817337b2e8175640fe[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Rajdeep31 <rajdeep.dharajiyaljpce2020@gmail.com>
+Date:   Wed Feb 22 21:11:54 2023 +0530
+
+    Checkout Early Push
+
+[33mcommit 383aa44214b83dfe06d7912be7f4abce1e9a7be2[m
+Author: Rajdeep31 <rajdeep.dharajiyaljpce2020@gmail.com>
+Date:   Wed Feb 15 18:10:02 2023 +0530
+
+    Checkout Section
+
+[33mcommit 64b1f676b7d210e85388639c6d28737dc99355fa[m
+Author: Rajdeep31 <rajdeep.dharajiyaljpce2020@gmail.com>
+Date:   Mon Jan 30 21:09:00 2023 +0530
+
+    Add To Cart / With Login Register Done
+
+[33mcommit afe95567d02ffd6321da99833ee83c9222084490[m
+Author: Rajdeep31 <rajdeep.dharajiyaljpce2020@gmail.com>
+Date:   Sun Jan 29 18:09:21 2023 +0530
+
+    Cart ADD/UPDATE/DELETE Done
+
+[33mcommit 9a642153833a64ca651745b7bd1a49c551b5b105[m
+Author: Rajdeep31 <rajdeep.dharajiyaljpce2020@gmail.com>
+Date:   Sat Jan 28 22:29:00 2023 +0530
+
+    Add to cart functionality added
+
+[33mcommit dc1c57e04059e0f0f7d48740c43b409ff7e784e5[m
+Author: Rajdeep31 <rajdeep.dharajiyaljpce2020@gmail.com>
+Date:   Sat Jan 28 19:13:42 2023 +0530
+
+    login and register done
+
+[33mcommit 8807e554ac3354df790b0815b39daef5f84a2bd8[m
+Author: Rajdeep31 <rajdeep.dharajiyaljpce2020@gmail.com>
+Date:   Sat Jan 28 11:04:23 2023 +0530
+
+    Updated user_login & user_register page
+
+[33mcommit 83fd26aa396f43f777347861555ebee3212bcf70[m
+Author: Rajdeep31 <rajdeep.dharajiyaljpce2020@gmail.com>
+Date:   Thu Jan 26 18:39:43 2023 +0530
+
+    Added Customer Register and Login Page
+
+[33mcommit 421367b3dd103e4de222adc7846f42ce1ee36ad7[m
+Author: Rajdeep31 <rajdeep.dharajiyaljpce2020@gmail.com>
+Date:   Thu Jan 26 12:16:50 2023 +0530
+
+    26-Jan
+
+[33mcommit d0dbe03f065c187554573d04e05c1eda196ff432[m
+Author: Rajdeep31 <rajdeep.dharajiyaljpce2020@gmail.com>
+Date:   Tue Jan 24 20:06:24 2023 +0530
+
+    modified some pages(product,top,style)
+
+[33mcommit eb3bc7d325d4de24b585f871110f0d6ce7974dab[m
+Author: Rajdeep31 <rajdeep.dharajiyaljpce2020@gmail.com>
+Date:   Mon Jan 23 22:58:26 2023 +0530
+
+    Product catrgory section
+
+[33mcommit 1d00409c90673bab19d7beb92fd96e196000fd35[m
+Author: Rajdeep31 <rajdeep.dharajiyaljpce2020@gmail.com>
+Date:   Mon Jan 23 18:35:23 2023 +0530
+
+    Added Dynamic Category Navbar and Some Category Section
+
+[33mcommit 8423bf351af5a5716c59bf2bcdf72e7c34de63ed[m
+Author: Rajdeep31 <rajdeep.dharajiyaljpce2020@gmail.com>
+Date:   Sun Jan 22 20:21:21 2023 +0530
+
+    Dynamically Displayed Product In Latest arrival section (Category In Navbar Pending)
+
+[33mcommit f70608b41c453dc46f4953ab24aa4a77c4ccd64d[m
+Author: Rajdeep31 <rajdeep.dharajiyaljpce2020@gmail.com>
+Date:   Sat Jan 21 19:39:36 2023 +0530
+
+    Started Working On Frontend
+
+[33mcommit a2fd7c4cbc7d25ed425371984b1e10f505228a26[m
+Author: Rajdeep31 <rajdeep.dharajiyaljpce2020@gmail.com>
+Date:   Sat Jan 21 18:38:05 2023 +0530
+
+    Admin Panel (Image Section Done )
+
+[33mcommit d0e11bcb3038936b307807200d21bc012830bf94[m
+Author: Rajdeep31 <rajdeep.dharajiyaljpce2020@gmail.com>
+Date:   Fri Jan 20 19:37:30 2023 +0530
+
+    added frontend theme
+
+[33mcommit 12a0c26430d1d99e7e3832911e47e917c97438c6[m
+Author: Rajdeep31 <rajdeep.dharajiyaljpce2020@gmail.com>
+Date:   Mon Jan 2 16:59:41 2023 +0530
+
+    initial commit [Admin Panel(Image Section Pending)]
