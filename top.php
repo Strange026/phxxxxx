@@ -132,6 +132,7 @@ $totalProduct = $obj->totalProduct();
                       echo '<a href="logout.php"><i class="icon-user icons">Logout</i></a>';
                       // echo $_SESSION['USER_NAME'];
                       echo '<a href="order.php">Order</a>';
+                      echo '<a href="profile.php">profile</a>';
                     } else {
                       echo '<a href="login.php"><i class="icon-user icons">Login</i></a>';
                     }

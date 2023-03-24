@@ -53,7 +53,7 @@
 										<span class="field_error" id="login_password_error"></span>
 									</div>
                                     <div>
-                                        <a href="forget_password.php" class="text">Forgot password?</a>
+                                        <a href="forget_password.php" class="forget_password">Forgot password?</a>
                                         </div>
 									
 									<div class="contact-btn">

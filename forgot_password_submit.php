@@ -3,14 +3,14 @@ require('connection.inc.php');
 require('functions.inc.php');
 
 $email=get_safe_value($con,$_POST['email']);
-$type=get_safe_value($con,$_POST['type']);
-if($type=='email'){
-    $email=get_safe_value($con,$_POST['email']);
-    $otp=rand(1111,9999);
-    $_SESSION['EMAIL_OTP']=$otp;
-    $html="$otp is your OTP from Phoenix Computers";
+$res=mysqli_query($con,"select * from customer where email='$email'");
+$check_user=mysqli_num_rows($res);
 
-    include('smtp/PHPMailerAutoload.php');
+if($check_user>0){
+	$row=mysqli_fetch_assoc($res);
+	$password=$row['password'];
+	$html="Your password is <strong>$password</strong>";
+	include('smtp/PHPMailerAutoload.php');
 	$mail=new PHPMailer(true);
 	$mail->isSMTP();
 	$mail->Host="smtp.gmail.com";
@@ -22,19 +22,20 @@ if($type=='email'){
 	$mail->SetFrom("phoenix.computers07@gmail.com");
 	$mail->addAddress($email);
 	$mail->IsHTML(true);
-	$mail->Subject="New OTP";
+	$mail->Subject="Your Password";
 	$mail->Body=$html;
 	$mail->SMTPOptions=array('ssl'=>array(
 		'verify_peer'=>false,
 		'verify_peer_name'=>false,
 		'allow_self_signed'=>false
 	));
-    
 	if($mail->send()){
-		echo "done";
+		echo "Please check your email id for password";
 	}else{
-		echo "Error occur";
+		//echo "Error occur";
 	}
+}else{
+	echo "Email id not registered with us";
+	die();
 }
-
 ?>
