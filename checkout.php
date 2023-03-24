@@ -116,7 +116,7 @@ if (isset($_POST['submit'])) {
     } else {
     ?>
         <script>
-            // alert("Your order has been placed successfully");
+            alert("Your order has been placed successfully");
             window.location.href = 'order.php';
         </script>
 <?php
@@ -292,7 +292,7 @@ if (isset($_POST['submit'])) {
                                     <a href="#"><?php echo $pname ?></a>
                                     <span class="price"><?php echo '₹' . $price * $qty ?></span>
                                     <span class="price"><?php echo 'Qty: ' . $qty ?></span>
-                                    <td class="product-quantity"><input type="number" min="0" max="10" id="<?php echo $key ?>qty" value="<?php echo $qty ?>" />
+                                    <td class="product-quantity"><input type="number" min="1" max="10" id="<?php echo $key ?>qty" value="<?php echo $qty ?>" />
                                         <br /><a href="javascript:void(0)" onclick="manage_cart('<?php echo $key ?>','update')">Update</a>
                                 </div>
                                 <div class="single-item__remove">

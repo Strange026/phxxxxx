@@ -71,10 +71,10 @@
                   <h2 class="title__line--2">my account</h2>
                   <div class="ft__inner">
                     <ul class="ft__list">
-                      <li><a href="#">My Account</a></li>
+                      <li><a href="profile.php">My Account</a></li>
                       <li><a href="cart.html">My Cart</a></li>
-                      <li><a href="#">Login</a></li>
-                      <li><a href="wishlist.html">Wishlist</a></li>
+                      <li><a href="login.php">Login</a></li>
+                      
                       <li><a href="checkout.html">Checkout</a></li>
                     </ul>
                   </div>

@@ -80,13 +80,13 @@
 								<form id="register-form" action="user_register.php" method="post">
 									<div class="single-contact-form">
 										<div class="contact-box name">
-											<input type="text" id="name" placeholder="Enter Your Name*" name="name" style="width:100%"  >
+											<input type="text" id="name" placeholder="Enter Your Name*" name="name" style="width:100%"  required>
 										</div>
 										<span class="field_error" id="name_error"></span>
 									</div>
 									<div class="single-contact-form">
 									<div class="contact-box name">
-											<input type="email" name="email" id="email" placeholder="Your Email*" style="width:45%">
+											<input type="email" name="email" id="email" placeholder="Your Email*" style="width:45%" >
 											
 											
 											<button type="button" class="fv-btn email_sent_otp height_60px" onclick="email_sent_otp()">Send OTP</button>
@@ -103,19 +103,19 @@
 									
 									<div class="single-contact-form">
 										<div class="contact-box name">
-											<input type="password" id="password" name="password" placeholder="Enter Your Password*" name="password" style="width:100%" >
+											<input type="password" id="password" name="password" placeholder="Enter Your Password*" name="password" style="width:100%" required>
 										</div>
 										<span class="field_error" id="password_error"></span>
 									</div>
                                     <div class="single-contact-form">
 										<div class="contact-box name">
-											<input type="password" id="confirm_password" name="confirmpassword" placeholder="Confirm Password*" style="width:100%"  >
+											<input type="password" id="confirm_password" name="confirmpassword" placeholder="Confirm Password*" style="width:100%" required >
 										</div>
 										<span class="field_error" id="confirmpassword_error"></span>
 									</div>
                                     <div class="checkbox-text">
                                         <div class="checkbox-content">
-                                            <input type="checkbox" id="termCon"  >
+                                            <input type="checkbox" id="termCon" required >
                                             <label for="termCon" class="text" >I accepted all terms and conditions</label>
                                         </div>
                                     </div>  

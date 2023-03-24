@@ -42,11 +42,14 @@ require('top.php');
                                 <tbody>
                                     <?php  
                                     $uid=$_SESSION['USER_ID'];     
-                                    $res = mysqli_query($con,"select order_.*,order_status.name as order_status    from order_,order_status where order_.customer_id='$uid' and order_status.id=order_.order_status");     
+                                    $res = mysqli_query($con,"select order_.*,order_status.name as order_status   from order_,order_status where order_.customer_id='$uid' and order_status.id=order_.order_status");     
                                     while($row = mysqli_fetch_assoc($res)){
                                     ?>
                                         <tr>
-                                            <td class="product-add-to-cart"><a href="order_details.php?id=<?php echo $row['order_id']?>"><?php echo $row['order_id']?></a></td>
+                                            <td class="product-add-to-cart"><a href="order_details.php?id=<?php echo $row['order_id']?>"><?php echo $row['order_id']?></a>
+                                            <br>
+                                            <a href="invoice.php?id=<?php echo $row['order_id']?>">Invoice</a>
+                                            </td>
                                             <td class="product-name"><?php echo $row['added_on']?></td>
                                             <td class="product-name">
                                                 <?php echo $row['address']?><br/>

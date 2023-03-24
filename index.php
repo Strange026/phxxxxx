@@ -10,7 +10,7 @@ require('top.php');
   <p>We have Great amount of experience in Building Gaming PC, Editing PC & Workstation PC for our clients. We build with love and we know what your PC means to you 🖤</p>
   <p>Just give us a chance to serve you and get your Dream Gaming PC Build or Editing PC Build from us. So if you’re looking to buy PC online then you’re at the right place. </p>
   <p>For best Online PC Build services and prices shop Phoenix Computers!</p>
-  <a href="#" class="main-btn">Shop Now<i class='bx bx-right-arrow-alt'></i></a>
+  <a href="categories.php?id=28" class="main-btn">Shop Now<i class='bx bx-right-arrow-alt'></i></a>
 </div>
 
 

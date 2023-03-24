@@ -59,7 +59,7 @@ require('top.php');
 
                                             </td>
                                             <td class="product-price"><span class="amount"><?php echo '₹' . $price ?></span></td>
-                                            <td class="product-quantity"><input type="number" min="0" max="10" id="<?php echo $key ?>qty" value="<?php echo $qty ?>" />
+                                            <td class="product-quantity"><input type="number" min="1" max="10" id="<?php echo $key ?>qty" value="<?php echo $qty ?>" />
                                                 <br>
                                                 <a href="javascript:void(0)" onclick="manage_cart('<?php echo $key ?>','update')">Update</a>
                                                 

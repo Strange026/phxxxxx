@@ -63,9 +63,24 @@ if($product_id>0){
                         <p class="pro__info"><?php echo $get_product['0']['short_desc'] ?></p>
                         <div class="ht__pro__desc">
                             <div class="sin__desc">
-                                <p><span>Availability:</span> In Stock</p>
+                            <?php
+                             $productSoldQtyByProductId=productSoldQtyByProductId($con,$get_product['0']['product_id']);
+                             $cart_show='yes';
+                            if($get_product['0']['quantity']>$productSoldQtyByProductId){
+                                    $stock='In Stock';
+                                    
+                            }else{
+                                $stock='Out of Stock';
+                                $cart_show='';
+                            }
+                            
+                            ?>
+                                <p><span>Availability:</span><?php echo $stock?></p>
                             </div>
                             <div class="sin__desc">
+                                <?php
+                                if($cart_show!=''){
+                                    ?>
                                 <p><span>Qty:</span>
                                     <select id="qty">
                                         <option>1</option>
@@ -80,6 +95,7 @@ if($product_id>0){
                                         <option>10</option>
                                     </select>
                                 </p>
+                                <?php } ?>
                             </div>
                             <div class="sin__desc align--left">
                                 <p><span>Categories:</span></p>
@@ -89,7 +105,11 @@ if($product_id>0){
                             </div>
                         </div>
                     </div>
+                    <?php
+                    if($cart_show!=''){
+                        ?>
                     <a class="fr__btn" href="javascript:void(0)" onclick="manage_cart('<?php echo $get_product['0']['product_id']?>','add')">Add To Cart</a>
+                    <?php } ?>
                 </div>
             </div>
         </div>

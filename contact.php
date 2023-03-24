@@ -37,7 +37,7 @@
                             </div>
                             <div class="address__details">
                                 <h2 class="ct__title">our address</h2>
-                                <p> </p>
+                                <p> LJ Campus Near Sarkhej-Sanand Circle, Off, Sarkhej - Gandhinagar Hwy, Ahmedabad, Gujarat 382210</p>
                             </div>
                         </div>
                         <div class="address">
@@ -45,8 +45,8 @@
                                 <i class="icon-envelope icons"></i>
                             </div>
                             <div class="address__details">
-                                <h2 class="ct__title"></h2>
-                                <p></p>
+                                <h2 class="ct__title">Our Mail</h2>
+                                <p>phoenix.computers07@gmail.com</p>
                             </div>
                         </div>
 
@@ -56,7 +56,7 @@
                             </div>
                             <div class="address__details">
                                 <h2 class="ct__title">Phone Number</h2>
-                                <p></p>
+                                <p>+91 9724137319</p>
                             </div>
                         </div>
                     </div>      
@@ -116,7 +116,7 @@
                 scrollwheel: false,
 
                 // The latitude and longitude to center the map (always required)
-                center: new google.maps.LatLng(23.7286, 90.3854), // New York
+                center: new google.maps.LatLng(22.99066848727038, 72.48688150712773), // New York
 
                 // How you would like to style the map. 
                 // This is where you would paste any style found on Snazzy Maps.
@@ -298,7 +298,7 @@
 
             // Let's also add a marker while we're at it
             var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(23.7286, 90.3854),
+                position: new google.maps.LatLng(22.99066848727038, 72.48688150712773),
                 map: map,
                 title: 'Ramble!',
                 icon: 'images/icons/map-2.png',

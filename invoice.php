@@ -5,6 +5,17 @@ require('functions.inc.php');
 $order_id = get_safe_value($con, $_GET['id']);
 
 
+
+
+if(!$_SESSION['ADMIN_LOGIN']){
+    if(!isset($_SESSION['USER_ID'])){
+        die();
+    }
+    
+}
+
+
+
 //get invoices data
 $query=mysqli_query($con,"select order_.*,customer.first_name,customer.contact_no from order_,customer where  order_id='".$_GET['id']."'");
 $invoice=mysqli_fetch_array($query);
@@ -100,11 +111,26 @@ $html = '<link rel="stylesheet" href="css/bootstrap.min.css" />
 </tr>
 </thead>
 <tbody>';
-                                    $uid=$_SESSION['USER_ID'];     
-                                    $res = mysqli_query($con,"select distinct(order_details.order_details_id),order_details.*,product.name,product.img from order_details,product,order_ where order_details.order_id='$order_id' and order_.customer_id='$uid' and order_details.product_id=product.product_id"); 
-                                    $total_price=0;    
+                                        
+                                    if(isset($_SESSION['ADMIN_LOGIN'])){
+                                        $res = mysqli_query($con,"select distinct(order_details.order_details_id),order_details.*,product.name,product.img from order_details,product,order_ where order_details.order_id='$order_id' and order_details.product_id=product.product_id"); 
+
+                                    }else{
+                                        $uid=$_SESSION['USER_ID']; 
+                                        $res = mysqli_query($con,"select distinct(order_details.order_details_id),order_details.*,product.name,product.img from order_details,product,order_ where order_details.order_id='$order_id' and order_.customer_id='$uid' and order_details.product_id=product.product_id"); 
+                                    }
+                                    
+                                    
+                                    $total_price=0;
+                                    if(mysqli_num_rows($res)==0){
+                                        die();
+                                    }    
                                     while ($row = mysqli_fetch_assoc($res)){ 
-                                   $total_price=$total_price+($row['quantity']*$row['price']);
+                                    $total_price=$total_price+($row['quantity']*$row['price']);
+                                    if(mysqli_num_rows($res)==0){
+                                        die();
+                                    }
+
 
 $html.='<tr>
 <td class="product-name">'.$row['name'].'</td>
@@ -122,5 +148,7 @@ $html.='<tr>
 $html.='</tbody>
 </table>
 </div>';
+
 $mpdf->WriteHTML($html);
-$mpdf->Output();
+$file=time().'.pdf';
+$mpdf->Output($file,'D');
