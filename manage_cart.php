@@ -9,6 +9,17 @@
     $qty=get_safe_value($con,$_POST['qty']);
     $type=get_safe_value($con,$_POST['type']);
 
+    $productSoldQtyByProductId=productSoldQtyByProductId($con,$product_id);
+    $productQty=productQty($con,$product_id);
+
+    $pending_qty=$productQty-$productSoldQtyByProductId;
+    // if($qty>$pending_qty){
+    //     echo "not_available";
+    //     die();
+    // }
+
+
+
     $obj=new add_to_cart();
 
     if($type=='add'){
@@ -27,9 +38,3 @@
 
     echo $obj->totalProduct();
 ?>
-
-
-
-
-
-

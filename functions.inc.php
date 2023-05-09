@@ -55,4 +55,12 @@
         $row=mysqli_fetch_assoc($res);
         return $row['quantity'];
     }
+
+
+    function productQty($con,$product_id){
+        $sql="select quantity from product where product_id='$product_id'";
+        $res=mysqli_query($con,$sql);
+        $row=mysqli_fetch_assoc($res);
+        return $row['quantity'];
+    }
 ?>

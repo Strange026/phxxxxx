@@ -39,7 +39,7 @@
                                                 <td><?php echo $row['contact_no']?></td>
                                                 <td>
                                                     <?php
-                                                        echo "<span class='badge badge-delete'><a href='?type=delete&id=".$row['customer_id']."'>Delete</a></span>";
+                                                        // echo "<span class='badge badge-delete'><a href='?type=delete&id=".$row['customer_id']."'>Delete</a></span>";
                                                     ?>
                                                 </td>
                                             </tr>

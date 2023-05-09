@@ -11,7 +11,6 @@ if(isset($_POST['delivery_boy'])){
     $delivery_boy=$_POST['delivery_boy'];
     mysqli_query($con,"update `order_` set delivery_boy_id='$delivery_boy' where order_id='$order_id'");
 }
-error_reporting(E_ERROR | E_PARSE);
 
 ?>
 <div class="content pb-0">

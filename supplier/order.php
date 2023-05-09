@@ -16,7 +16,7 @@
                                 <thead>
                                     <tr>
                                         <th class="product-thumbnail">Order ID</th>
-                                        <th class="product-name"><span class="nobr">Order Date</span></th>
+                                        <th class="product-name"><span class="nobr">Product Name/Qty</span></th>
                                         <th class="product-price"><span class="nobr">Address</span></th>
                                         <th class="product-stock-stauts"><span class="nobr">Payment Type</span></th>
                                         <th class="product-stock-stauts"><span class="nobr">Payment Status</span></th>
@@ -25,16 +25,18 @@
                                 </thead>
                                 <tbody>
                                     <?php      
-                                     $res =mysqli_query($con,"select order_.*,order_status.name as order_status from order_,order_status where order_status.id=order_.order_status");     
+                                     $res =mysqli_query($con,"select order_details.quantity,product.name,order_.*,order_status.name as order_status from order_details,product,order_,order_status where order_status.id=order_.order_status and product.product_id=order_details.product_id and order_.order_id=order_details.order_id and product.added_by='".$_SESSION['SUPPLIER_ID']."'  order by order_.order_id desc");     
                                     while($row = mysqli_fetch_assoc($res)){
                                     ?>
                                         <tr>
-                                            <td class="product-add-to-cart"><a href="order_details.php?id=<?php echo $row['order_id']?>"><?php echo $row['order_id']?></a>
+                                            <td class="product-add-to-cart"><?php echo $row['order_id']?></a>
                                             <br>
-                                            <a href="../invoice.php?id=<?php echo $row['order_id']?>">Invoice</a>
+                                            
                                         
                                         </td>
-                                            <td class="product-name"><?php echo $row['added_on']?></td>
+                                            <td class="product-name"><?php echo $row['name']?><br>
+                                            <?php echo 'Qty :'.$row['quantity']?>
+                                            </td>
                                             <td class="product-name">
                                                 <?php echo $row['address']?><br/>
                                                 <?php echo $row['city']?><br/>

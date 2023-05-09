@@ -20,6 +20,7 @@ if (isset($_POST['submit'])) {
     $number = get_safe_value($con, $_POST['number']);
     $payment_type = get_safe_value($con, $_POST['payment_type']);
     $user_id = $_SESSION['USER_ID'];
+    $user_name=$_SESSION['USER_NAME'];
     foreach ($_SESSION['cart'] as $key => $val) {
         $productArr = get_product($con, '', '', $key);
         $price = $productArr[0]['price'];
@@ -29,13 +30,18 @@ if (isset($_POST['submit'])) {
     }
     $total_price = $cart_total_tax;
     $payment_status = 'pending';
-    if ($payment_type == 'cod') {
-        $payment_status = 'success';
+    if ($payment_type == 'COD') {
+        $payment_status = 'Success';
     }
     $order_status = '1';
     $added_on = date('y-m-d');
 
-    mysqli_query($con, "insert into `order_`(customer_id,address,city,pincode,number,payment_type,total_price,payment_status,order_status,added_on) values('$user_id','$address','$city','$pincode','$number','$payment_type','$total_price','$payment_status','$order_status','$added_on')");
+    mysqli_query($con, "insert into `order_`(customer_id,customer_name,address,city,pincode,number,payment_type,total_price,payment_status,order_status,added_on) values('$user_id','$user_name','$address','$city','$pincode','$number','$payment_type','$total_price','$payment_status','$order_status','$added_on')");
+
+   
+
+
+
 
 
 

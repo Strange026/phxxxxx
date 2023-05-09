@@ -46,6 +46,10 @@ $mpdf->Cell(130, 5, '', 0, 0);
 $mpdf->Cell(25, 5, 'Customer ID:', 0, 0,);
 $mpdf->Cell(34, 5,$invoice['customer_id'], 0, 1,'C'); //end of line
 
+$mpdf->Cell(130, 5, '', 0, 0);
+$mpdf->Cell(25, 5, 'Customer Name:', 0, 0,);
+$mpdf->Cell(34, 5,$invoice['customer_name'], 0, 1,'C'); //end of line
+
 //make dummy empty cell as a vertical spacer
 $mpdf->Cell(189, 10, '', 0, 1); //end of line
 

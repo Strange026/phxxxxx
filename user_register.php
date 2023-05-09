@@ -15,7 +15,7 @@ $check_user=mysqli_num_rows(mysqli_query($con,"select * from customer where emai
     }else{
         mysqli_query($con,"insert into customer(first_name,email,password) values('$name','$email','$password')");
         echo '<script>alert("Registration Successful");
-        // window.location.href="login.php";
+        window.location.href="login.php";
         </script>';
     }
 ?>

@@ -18,7 +18,7 @@ $img_required = 'required';
 if (isset($_GET['id']) && $_GET['id'] != '') {
     $img_required = '';
     $id = get_safe_value($con, $_GET['id']);
-    $res = mysqli_query($con, "select * from product where product_id='$id'");
+    $res = mysqli_query($con, "select * from product where product_id='$id' and added_by='".$_SESSION['SUPPLIER_ID']."'");
     $check = mysqli_num_rows($res);
     if ($check > 0) {
         $row = mysqli_fetch_assoc($res);
@@ -51,7 +51,7 @@ if (isset($_POST['submit'])) {
     $short_desc = get_safe_value($con, $_POST['short_desc']);
     $description = get_safe_value($con, $_POST['description']);
     $best_seller = get_safe_value($con, $_POST['best_seller']);
-    $res = mysqli_query($con, "select * from product where name='$name'");
+    $res = mysqli_query($con, "select * from product where name='$name' and added_by='".$_SESSION['SUPPLIER_ID']."'");
     $check = mysqli_num_rows($res);
     if ($check > 0) {
         if (isset($_GET['id']) && $_GET['id'] != '') {
@@ -79,7 +79,7 @@ if (isset($_POST['submit'])) {
             $img = rand(1111111111, 9999999999) . '_' . $_FILES['image']['name'];
             move_uploaded_file($_FILES['image']['tmp_name'], '../media/product/' . $img);
             mysqli_query($con, "INSERT INTO product(category_id,supplier_id,name,mrp,price,quantity,img,short_desc,description,status,best_seller,sub_category_id,added_by) 
-            VALUES('$category_id','$supplier_id','$name','$mrp','$price','$quantity','$img','$short_desc','$description','1','$best_seller','$sub_category_id','$supplier_id')");
+            VALUES('$category_id','".$_SESSION['SUPPLIER_ID']."','$name','$mrp','$price','$quantity','$img','$short_desc','$description','1','$best_seller','$sub_category_id','".$_SESSION['SUPPLIER_ID']."')");
         }
         header('location:product.php');
         die();
@@ -120,12 +120,12 @@ if (isset($_POST['submit'])) {
                             </div>
 
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="suppliers" class=" form-control-label">Supplier</label>
                                 <select class="form-control" name="supplier_id">
                                     <option>Select Supplier</option>
                                     <?php
-                                    $res = mysqli_query($con, "select supplier_id,company_name from suppliers order by company_name asc");
+                                    $res = mysqli_query($con, "select supplier_id,company_name from suppliers where supplier_id='$supplier_id'");
                                     while ($row = mysqli_fetch_assoc($res)) {
                                         if ($row['supplier_id'] == $supplier_id) {
                                             echo "<option selected value=" . $row['supplier_id'] . ">" . $row['company_name'] . "</option>";
@@ -135,7 +135,7 @@ if (isset($_POST['submit'])) {
                                     }
                                     ?>
                                 </select>
-                            </div>
+                            </div> -->
 
 
 
@@ -202,7 +202,7 @@ if (isset($_POST['submit'])) {
 
 
 
-                            <button id="payment-button" type="submit" name="submit" class="btn btn-lg btn-info btn-block" onclick="return alert('Record Inserted!');">
+                            <button id="payment-button" type="submit" name="submit" class="btn btn-lg btn-info btn-block">
                                 <span id="payment-button-amount" name="submit">Submit</span>
                             </button>
                             <div class="field_error"><?php echo $msg ?></div>

@@ -15,7 +15,7 @@ if($check_user>0){
 // 	echo "mobile_present";
 }else{
 	$added_on=date('Y-m-d h:i:s');
-	mysqli_query($con,"insert into users(name,email,password,added_on) values('$name','$email','$password','$added_on')");
+	mysqli_query($con,"insert into customer(name,email,password,added_on) values('$name','$email','$password','$added_on')");
 	echo "insert";
 }
 ?>
